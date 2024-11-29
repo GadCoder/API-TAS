@@ -20,5 +20,7 @@ def save_news(news: NewsCreate, db: Session):
 
 def retrieve_last_news(
     db: Session,
+    delay_in_days: int = 7,
 ):
-    return db.query(News).all()
+    time_delay = datetime.datetime.now() - datetime.timedelta(days=delay_in_days)
+    return db.query(News).filter(News.created_at >= time_delay).all()

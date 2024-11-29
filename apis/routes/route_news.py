@@ -18,6 +18,6 @@ def create_new_news(news: NewsCreate, db: Session = Depends(get_db)):
 
 
 @router.get("/get-latest-news/", response_model=list[News])
-def get_latest_news(db: Session = Depends(get_db)):
-    news = retrieve_last_news(db)
+def get_latest_news(delay_in_days: int = 7, db: Session = Depends(get_db)):
+    news = retrieve_last_news(db=db, delay_in_days=delay_in_days)
     return news
