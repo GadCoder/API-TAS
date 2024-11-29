@@ -2,19 +2,17 @@ import datetime
 from pydantic import BaseModel
 
 
-class NewsBase(BaseModel):
+class DataElementBase(BaseModel):
     title: str
     url: str
     content: str
+    type: str
 
 
-class NewsCreate(NewsBase):
+class DataElementCreate(DataElementBase):
     pass
 
 
-class News(NewsBase):
-    id: int
+class DataElement(DataElementBase):
     created_at: datetime.datetime
-
-    class Config:
-        orm_mode = True
+    pass
