@@ -15,7 +15,7 @@ class Settings:
     TITTLE: str = "Bus Location API"
     VERSION: str = "1.0.0"
 
-    IS_DEV: bool = os.getenv("IS_DEV", True)
+    IS_DEV: bool = os.getenv("IS_DEV", False)
     MONGO_USER: str = os.getenv("MONGO_USER")
     MONGO_PASSWORD: str = os.getenv("MONGO_PASSWORD")
     MONGO_HOST: str = os.getenv("MONGO_HOST")
