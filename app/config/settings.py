@@ -1,9 +1,12 @@
 import os
-
+from pathlib import Path
 from dataclasses import dataclass
+
 from dotenv import load_dotenv
 
-load_dotenv()
+env_path = Path('.') / '.env'
+load_dotenv(dotenv_path=env_path)
+
 
 
 
@@ -22,3 +25,4 @@ class Settings:
 
 settings = Settings()
 print(settings.DB_URL)
+print(settings.MONGO_HOST)
