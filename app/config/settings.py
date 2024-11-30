@@ -20,7 +20,7 @@ class Settings:
     MONGO_PASSWORD: str = os.getenv("MONGO_PASSWORD")
     MONGO_HOST: str = os.getenv("MONGO_HOST")
     MONGO_PORT: str = os.getenv("MONGO_PORT")
-    DB_URL = "mongodb://localhost:27017" if IS_DEV else f"mongodb://{MONGO_HOST}:{MONGO_PORT}/"
+    DB_URL = f"mongodb://{MONGO_HOST}:{MONGO_PORT}/"
 
 
 settings = Settings()
