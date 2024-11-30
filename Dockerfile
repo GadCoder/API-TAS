@@ -18,4 +18,4 @@ EXPOSE 8080
 
 
 # Run app.py when the container launches
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["fastapi", "ryn", "app/main.py", "--host", "0.0.0.0", "--port", "8080"]
